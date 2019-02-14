@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['login'])){
+  header("location:../login.php");
+  exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,11 +35,11 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="../assets/img/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Ichad</h2>
+                <h2><?= $_SESSION['user']['username'] ?></h2>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -53,7 +62,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="../config/do_logout.php">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>

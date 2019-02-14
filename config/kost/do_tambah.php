@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+
+if(!isset($_SESSION['login'])){
+  header("location:../login.php");
+  exit;
+}
+
 include "../config.php";
 $nama_kost = $_POST['nama_kost'];
 $harga = $_POST['harga'];

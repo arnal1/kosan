@@ -16,6 +16,8 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 $query = mysqli_query($koneksi,"INSERT INTO admin VALUES('','$username','$password')");
 
+
+
 if ($query){
     echo "<script>
         alert('Registrasi berhasil, silahkan login kembali!');
