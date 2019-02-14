@@ -57,6 +57,8 @@
 
             </div>
         </section>
+        
+        <?php require_once('template/footer.php'); ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
